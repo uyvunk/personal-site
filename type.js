@@ -1,7 +1,7 @@
 (function(){
   "use strict";
 
-  var text="Hello there. Please click on following links to visit my Github and Wordpress page :)";
+  var text="Hello there. My name is Vu Nguyen<p>Please click on following links to visit my Github and Wordpress page :)</p>";
   var delay=50;
   var currentChar;
   var destination="greeting";
