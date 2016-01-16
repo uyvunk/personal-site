@@ -1,14 +1,8 @@
-(function(){
-  "use strict";
-
-  var text="Hello there. My name is Vu Nguyen<p>Please click on following links to visit my Github and Wordpress page :)</p>";
+  var text="Hello there. My name is Vu Nguyen. It's great to see you!<p>Please click on following links to visit my Github, Wordpress, Facebook, or LinkedIn</p>";;
   var delay=50;
   var currentChar;
   var destination="greeting";
   var timer = null;
-  window.onload = function() {
-    startTyping();
-  };
 
   function startTyping()
   {
@@ -52,6 +46,9 @@
     }
   }
 
-}());
+  function getTime() {
+    var date = new Date();
+    return "" + date.getHours() + ":" + date.getMinutes(); 
+  }
 
 

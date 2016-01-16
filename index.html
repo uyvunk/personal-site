@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Vu's Geek</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script type="text/javascript" src="type.js"></script>
-</head>
-<body>
-<div class="container">
-<p>
-	<h1 id="greeting"></h1>
-</p>
-<p>
-	<a href="https://github.com/uyvunk/"><img class="logos" src="images/github.png" alt="Git Hub"></a>
-	<a href="http://vusgeek.com/wordpress/"><img class="logos" src="images/wordpress.png" alt="Wordpress"></a>
-</p>
+  <head>
+    <title>Vu's Geek</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="type.js"></script>
+    <script type = "text/javascript" language = "javascript">
+    var DELAY = 200;
+    var FEED_URL = "http://www.cnet.com/rss/all/";
+    $(document).ready(function() {
+      var rand = Math.floor((Math.random() * 10) + 1) % 3 + 1;
+      $("body").css({backgroundImage: "url('images/body_background_" + rand + ".jpg')"});
+    });
 
-</div>
-</body>
+    $(window).load(function() {
+    // slide the container down
+      $("#container").delay(0*DELAY).slideDown(DELAY);
+      $(".profile_pic").delay(DELAY).animate({left: '0%'}, "slow");
+      $(".message_bubble").delay(5*DELAY).hide().fadeIn("fast");
+      setTimeout(startTyping, 5*DELAY);
+      $("#time").innerHTML = getTime();
+
+     });
+
+    </script>
+  </head>
+  <body>
+    <div id="main">
+      <div id="container">
+      <!-- <p>
+        <h1 id="greeting"></h1>
+      </p>
+      <p>
+        <a href="https://github.com/uyvunk/"><img class="logos" src="images/github.png" alt="Git Hub"></a>
+        <a href="http://vusgeek.com/wordpress/"><img class="logos" src="images/wordpress.png" alt="Wordpress"></a>
+      </p> -->
+      <div id="message">
+        <img class="profile_pic" src="images/profile.jpg" alt="Nice to meet you :)">
+        <div class="message_bubble">
+          <h3 id="greeting"></h3>
+        </div>
+      </div>
+      <div id="links">
+        <a href="https://github.com/uyvunk/"><img class="logos" src="images/github_2.png" alt="Git Hub"></a>
+        <a href="http://vusgeek.com/wordpress/"><img class="logos" src="images/wordpress_2.png" alt="Wordpress"></a>
+        <a href="https://www.facebook.com/uyvu.trummen"><img class="logos" src="images/facebook.png" alt="Facebook"></a>
+        <a href="https://www.linkedin.com/in/vunguyenk"><img class="logos" src="images/linkedin.png" alt="LinkIn"></a>
+      </div>
+      <div id="time"></div>
+      </div>
+    </div>
+  </body>
 </html>
